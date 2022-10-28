@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/Backgrounds/black.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends ParallaxBackground
+
+
+export var scrolling_speed: = 200.0
+
+func _process(delta: float) -> void:
+	scroll_offset.y += scrolling_speed * delta
+"
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = SubResource( 1 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2( 0, 1026 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( 512, 272 )
+scale = Vector2( 4.00781, 4.00781 )
+texture = ExtResource( 1 )
