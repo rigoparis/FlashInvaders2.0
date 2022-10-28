@@ -4,14 +4,15 @@
 [ext_resource path="res://src/Actors/Player.gd" type="Script" id=2]
 
 [node name="Player" type="KinematicBody2D"]
+position = Vector2( 512, 516 )
 scale = Vector2( 0.75, 0.75 )
 script = ExtResource( 2 )
-speed = Vector2( 400, 400 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2( 667.733, 715.2 )
 polygon = PoolVector2Array( -12, -12, -8, -37, 8, -37, 12, -13, 36, 1, 41, -1, 45, -6, 49, -6, 46, 25, 41, 21, 35, 23, 13, 28, 7, 37, -7, 37, -14, 27, -37, 23, -41, 21, -45, 26, -49, -5, -45, -6, -41, 0, -35, 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 667.733, 715.2 )
 texture = ExtResource( 1 )
+
+[node name="Maingun" type="Position2D" parent="."]
+position = Vector2( 0, -82.6667 )

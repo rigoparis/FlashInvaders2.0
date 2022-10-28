@@ -1,19 +1,10 @@
 extends Actor
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
+const bulletPath = preload('res://src/Bullets/PlayerBullet.tscn')
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 func _physics_process(delta: float) -> void:
 	var direction: = Vector2(
@@ -27,3 +18,12 @@ func _physics_process(delta: float) -> void:
 	if direction.x != 0 or direction.y != 0:
 		velocity = SPEED * direction
 	velocity = move_and_slide(velocity)
+	
+	if Input.is_action_just_pressed("shoot"):
+		shoot()
+
+func shoot():
+	var bullet = bulletPath.instance()
+	get_tree().get_root().get_node("Level").add_child(bullet)
+	bullet.global_position = $Maingun.global_position
+	

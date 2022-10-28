@@ -4,8 +4,10 @@
 [ext_resource path="res://src/Levels/ParallaxBackground.tscn" type="PackedScene" id=2]
 
 [node name="Level" type="Node2D"]
+position = Vector2( 526, 532 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 0 )
 collision_mask = 6
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 2 )]

@@ -13,14 +13,21 @@ _global_script_classes=[ {
 "class": "Actor",
 "language": "GDScript",
 "path": "res://src/Actors/Actor.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Bullet",
+"language": "GDScript",
+"path": "res://src/Bullets/Bullet.gd"
 } ]
 _global_script_class_icons={
-"Actor": ""
+"Actor": "",
+"Bullet": ""
 }
 
 [application]
 
 config/name="FlashInvaders2.0"
+run/main_scene="res://src/Actors/Player.tscn"
 config/icon="res://icon.png"
 
 [gui]
